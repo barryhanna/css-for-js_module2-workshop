@@ -29,9 +29,77 @@
   position: fixed;
   height: 80%;
   top: 200px;
-  right: 0;
+  right: 10%;
 }
 
 .controlColumn {
   width: 50%;
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding-top: 20px;
+    margin-top: 0;
+  }
+  .controlColumn {
+    display: flex;
+    overflow: auto;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    width: 90vw;
+    margin-top: 400px;
+  }
+
+  .characterWrapper {
+    z-index: -1;
+  }
+  .title {
+    z-index: -2;
+    width: max-content;
+  }
+
+  .description {
+    /* Visually Hidden */
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .characterWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 80vh;
+    shape-outside: circle(50%);
+  }
+
+  .character {
+    shape-outside: rect(0, 0, 130, 110);
+  }
+
+  .controlColumn {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .characterEditor {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .header {
+    padding-bottom: 8px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
 }
